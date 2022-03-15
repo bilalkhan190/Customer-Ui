@@ -1,0 +1,22 @@
+<table class="table table-stripped hover">
+  <thead>
+    <th>#</th>
+    <th>Customer</th>
+    <th>Address</th>
+    <th>Contact</th>
+    <th>Email</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of service.list">
+      <td>{{item.customerId}}</td>
+      <td>{{item.customer}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.contact}}</td>
+      <td>{{item.email}}</td>
+      <td><button type="button" class="btn btn-primary" (click)="EditForm(item.customerId)">Edit</button></td>
+      <td><button type="button" class="btn btn-danger"(click)="deleteForm(item.customerId)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+

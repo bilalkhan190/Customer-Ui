@@ -1,0 +1,55 @@
+<form novalidate #form="ngForm" (submit)="OnSubmit(form)">
+  <input type="hidden" [value]="service.FormData.customerId" />
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      class="form-control"
+      name="customer"
+      #customer="ngModel"
+      [(ngModel)]="service.FormData.customer"
+      placeholder="Enter Name Here"
+      required
+      [class.invalid]="customer.invalid && customer.touched"
+    />
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <input
+      class="form-control"
+      name="address"
+      #customer="ngModel"
+      [(ngModel)]="service.FormData.address"
+      placeholder="Enter Address Here"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label>Contact</label>
+    <input
+      class="form-control"
+      name="contact"
+      #customer="ngModel"
+      [(ngModel)]="service.FormData.contact"
+      placeholder="Enter Contact Here"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input
+      class="form-control"
+      name="email"
+      #customer="ngModel"
+      [(ngModel)]="service.FormData.email"
+      placeholder="Enter Email Here"
+      required
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-outline-success btn-block"
+    [disabled]="form.invalid"
+  >
+    Submit
+  </button>
+</form>
